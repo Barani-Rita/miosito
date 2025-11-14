@@ -1,30 +1,136 @@
 <!DOCTYPE html>
-<html>
+<html lang="it">
 <head>
-  <title>My First Page</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f1f1f1;
-      margin: 0;
-      padding: 0;
-    }
-    
-    h1 {
-      color: #333;
-      text-align: center;
-      margin-top: 50px;
-    }
-    
-    p {
-      color: #666;
-      text-align: center;
-      margin-top: 20px;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>portfolio personale</title>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/bootstrap-grid.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-  <h1>Hello World!</h1>
-  <p>Welcome to my first web page</p>
+<body class="min-width">
+
+    <!-- PRIMO CONTAINER: Solo per la navigazione -->
+    <div class="container-fluid">
+    
+        <div class="row pt-0 align-items-center bg-verde">
+            <div class="col-6 col-md-2 mobile pe-4">
+              <a href="#"><img class="logo" src="img/logo_Rita_Barani.svg" alt="logo rita barani"></a>
+            </div>
+            <div class="col-6 d-md-none d-flex justify-content-end align-items-center pe-5">
+                <button class="btn btn-menu">Menu</button>
+            </div>
+           
+            <div class="col-md-9 nav-wrapper d-none d-md-block">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link selected"><strong>Home</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link"><strong>Chi sono</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link"><strong>Progetti</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link"><strong>Contatti</strong></a>
+                     </li>
+                </ul>
+            </div>
+                <div class="col-md-1 d-none d-md-block justify-content-end">
+                    <button class="btn btn-cerca">Cerca</button>
+                </div>
+        </div>
+        <div class="mobile-nav-wrapper d-lg-none">
+                <button class="btn btn-close mb-3">Close</button>
+                    <ul class="nav-list">
+                      <li class="nav-item">
+                          <a href="#" class="nav-link"><strong>Home</strong></a>
+                      </li>
+                      <li class="nav-item">
+                          <a href="#" class="nav-link selected"><strong>Chi sono</strong></a>
+                      </li>
+                      <li class="nav-item">
+                          <a href="#" class="nav-link"><strong>Progetti</strong></a>
+                      </li>
+                      <li class="nav-item">
+                          <a href="#" class="nav-link"><strong>Contatti</strong></a>
+                      </li>
+                </ul> 
+        </div>
+    </div>
+
+
+    <!-- SECONDO CONTAINER: Per il contenuto con sfondo -->
+    <div class="container-fluid sfondo d-flex align-items-center">   
+          <div class="mx-5 row prima-row mt-5 mb-5 align-items-center">
+                <div class="col-12 col-md-5 mb-3 mb-md-0">
+                    <p class="sottotitolo"><strong>PORTFOLIO PERSONALE</strong></p>
+                    <h1 class="titolo">RITA<br>BARANI</h1>
+                    <p class="sottotitolo">Ciao, io sono Rita e studio Design all’università di San Marino. Se vuoi sapere qualcosa in più su di me puoi scorrere!</p>
+                </div>
+                <div class="col-12 col-md-7 text-center">
+                    <img class="img-fluid" src="img/Rectangle 1.png" alt="foto Rita Barani">
+                </div>
+          </div>
+    </div>
+
+
+    <!-- TERZO CONTAINER: Per il contenuto con sfondo -->
+    <div class="sfondo-1">
+        <div class="container content-wrapper"  style="padding-top: 50px; padding-bottom: 1px;">
+            <div class="row mb-5 pt-5 pb-5 align-items-center">
+                <div class="col-12 col-lg-6">
+                    <img class="img-chi-sono" src="img/Rectangle 16.png" alt="foto Edit Napoli 2024" style="width: 100%; height: auto; max-height: none;">
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4 mt-4 offset-lg-1">
+                    <h1 class="titolo">CHI SONO</h1>
+                    <p class="sottotitolo">
+                        Lavoro nel campo della comunicazione visiva e del prodotto, in particolare mi piace molto la grafica editoriale e il packaging.
+                        Durante il mio percorso di studi ho costituito diverse competenze e ho imparato ad utilizzare diversi programmi come ad esempio: Rhinoceros 3D, Fusion, Illustrator, Photoshop, InDesign ecc..
+                        Ho realizzato questo portfolio in modo da mostrare alcuni dei miei progetti più significativi del mio percorso scolastico.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- QUARTO CONTAINER: Per il contenuto con sfondo -->
+    <div class="sfondo-2">
+        <div class="container content-wrapper" style="padding-top: 0px; padding-bottom: 50px;">
+            <div class="row mb-5 pt-4 pb-4">
+                <div class="col-sm-12 col-md-6 col-lg-5 mt-4 offset-lg-1 d-flex flex-column justify-content-center">
+                    <h1 class="titolo">LA MIA CITTA'</h1>
+                    <p class="sottotitolo">
+                        Sono nata e cresciuta in provincia di Reggio Emilia, Il centro storico è un intreccio di strade antiche e edifici d’epoca. Il cuore culturale e sociale, conserva un fascino autentico e accogliente.
+                    </p>
+                </div>
+                <div class="col-12 col-lg-5 mb-0 mt-4 offset-1">
+                    <img class="img-fluid " src="img/reggio emilia.png" alt="Reggio Emilia">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+  // Seleziona gli elementi
+  const btnMenu = document.querySelector('.btn-menu');
+  const btnClose = document.querySelector('.btn-close');
+  const mobileNav = document.querySelector('.mobile-nav-wrapper');
+
+  // Apri il menu mobile
+  btnMenu.addEventListener('click', function() {
+    mobileNav.classList.add('show');
+    document.body.style.overflow = 'hidden'; // Blocca lo scroll
+  });
+
+  // Chiudi il menu mobile
+  btnClose.addEventListener('click', function() {
+    mobileNav.classList.remove('show');
+    document.body.style.overflow = ''; // Ripristina lo scroll
+  });
+</script>
 </body>
 </html>
