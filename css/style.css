@@ -1,6 +1,3 @@
-/* *{
-    outline: solid 1px red;
-} */
 html, body{
     font: normal 16px/24px Roboto, Helvetica, sans-serif;
     margin: 0;
@@ -19,9 +16,6 @@ html, body{
  }
     /* <!-- PRIMO CONTAINER: Solo per la navigazione --> */
 
-.menù{
-    padding-right: 20px;
- }
 
 .logo{
     width: 60px;
@@ -172,7 +166,7 @@ a:hover{
 }
 .sottotitolo{
     color: #403F0B;
-    font-family: Roboto;
+    font-family: 'Roboto', sans-serif;
     font-size: 18px;
     font-style: normal;
     font-weight: 400;
@@ -200,7 +194,6 @@ a:hover{
     background-color: #95A04BCC;
    }
 
-
    /* <!-- QUARTO CONTAINER: Per il contenuto con sfondo --> */
 
    .sfondo-2{
@@ -208,15 +201,157 @@ a:hover{
    }
    @media (max-width: 767px) {
     .sfondo-1 .container,
-    .sfondo-2 .container {
+    .sfondo-2 .container,
+    .sfondo-3 .container,
+    .sfondo-4 .container,
+    .sfondo-5 .container,
+    .sfondo-rosa .container,
+    .sfondo-6 .container,
+    .sfondo-7 .container,
+    .sfondo-8 .container,
+    .sfondo-9 .container{
         padding-left: 30px;
         padding-right: 30px;
     }
     
     /* Oppure aumenta i margini delle row */
     .sfondo-1 .row,
-    .sfondo-2 .row {
+    .sfondo-2 .row,
+    .sfondo-3 .row,
+    .sfondo-4 .row,
+    .sfondo-5 .row,
+    .sfondo-rosa .row,
+    .sfondo-6 .row,
+    .sfondo-7 .row,
+    .sfondo-8 .row,
+    .sfondo-9 .row{
         margin-left: 15px;
         margin-right: 15px;
     }
+}
+
+    /* <!-- QUINTO CONTAINER: Per il contenuto con sfondo --> */
+.sfondo-rosa{
+    background: rgba(221, 202, 162, 0.80);
+}
+
+/* Centrare la citazione nel quinto container */
+.sfondo-rosa .row{
+    justify-content: center;
+    align-items: center;    
+}
+.sfondo-rosa .scritta-centrale{
+    text-align: center; 
+    width: 100%;         
+}
+
+/* utility to keep a heading on a single line */
+.no-wrap{
+    white-space: nowrap;
+    overflow: hidden; /* prevent overflow visual artifacts */
+    text-overflow: ellipsis; /* in case container is too small, show ellipsis */
+}
+
+/* Responsive rules for the fifth container (sfondo-rosa) */
+.sfondo-rosa .container.content-wrapper{
+    padding-top: 80px; /* default desktop spacing */
+    padding-bottom: 80px;
+}
+
+
+/* Title and subtitle sizing (scales with viewport) */
+.sfondo-rosa .titolo{
+    /* smaller than main .titolo; uses clamp for responsive scaling */
+    font-size: clamp(28px, 4.5vw, 44px);
+    line-height: 1.05;
+}
+.sfondo-rosa .sottotitolo{
+    font-size: clamp(13px, 2.2vw, 18px);
+    line-height: 1.4;
+    max-width: 90%;
+    margin: 0 auto; /* keep it centered under title */
+}
+
+/* Make the 'no-wrap' title responsive: allow wrapping on smaller screens so text never gets clipped */
+@media (max-width: 767px){
+    .sfondo-rosa .container.content-wrapper{
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    .sfondo-rosa .titolo{ font-size: clamp(20px, 6vw, 30px); }
+    .sfondo-rosa .sottotitolo{ font-size: 14px; }
+    /* allow wrapping on extra small screens */
+    .sfondo-rosa .no-wrap{ white-space: normal; text-overflow: clip; }
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+    /* tablet spacing */
+    .sfondo-rosa .container.content-wrapper{
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    .sfondo-rosa .titolo{ font-size: clamp(24px, 4.2vw, 38px); }
+    .sfondo-rosa .sottotitolo{ font-size: 15px; }
+}
+
+ /* <!-- SESTO CONTAINER: Per il contenuto con sfondo --> */
+.sfondo-4{
+    background: linear-gradient(180deg, rgba(221, 202, 162, 0.80) 0%, rgba(236, 214, 92, 0.80) 100%);
+}
+
+/* <!-- SETTIMO CONTAINER: Per il contenuto con sfondo --> */
+.sfondo-5{
+background: linear-gradient(180deg, rgba(236, 214, 92, 0.80) 0%, rgba(236, 214, 92, 0.80) 100%);}
+
+/* Gallery (sfondo-5) - images occupy 4 columns each on md+ and sit close together */
+.sfondo-5 .tight-gallery{
+    /* tighten default gutters for this gallery */
+    margin-left: -6px;
+    margin-right: -6px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px; /* small visual gap */
+}
+.sfondo-5 .tight-gallery > [class*='col-']{
+    padding-left: 6px;
+    padding-right: 6px;
+}
+.sfondo-5 .project-img{
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* keep aspect but fill container nicely */
+    border-radius: 4px;
+}
+
+/* <!-- OTTAVO CONTAINER: Per il contenuto con sfondo --> */
+.sfondo-6{
+  background: linear-gradient(180deg, var(--giallo, rgba(236, 214, 92, 0.80)) 0%, rgba(220, 166, 4, 0.80) 100%);
+}
+
+/* <!-- NONO CONTAINER: Immagine singola centrata da 8 colonne --> */
+.sfondo-7 .project-img{
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 4px;
+}
+.sfondo-7 .project-figure{
+    margin: 0;
+    text-align: center;
+}
+.sfondo-7{
+    background: rgba(220, 166, 4, 0.80);
+}
+
+/* <!-- DECIMO CONTAINER: Per il contenuto con sfondo --> */
+.sfondo-8{
+    background: linear-gradient(180deg, var(--arancione, rgba(220, 166, 4, 0.80)) 0%, rgba(221, 202, 162, 0.80) 100%);
+}
+
+/* <!-- UNDICESIMO CONTAINER: Per il contenuto con sfondo --> */
+.sfondo-9{
+    background: rgba(221, 202, 162, 0.80);
 }
