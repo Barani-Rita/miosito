@@ -1,46 +1,41 @@
-html, body{
+/* =================================================================
+   BASE STYLES
+   ================================================================= */
+
+html, body {
     font: normal 16px/24px Roboto, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /* Previene lo scroll orizzontale */
+    overflow-x: hidden;
     min-width: 375px;
 }
-.container-fluid{
+
+.container-fluid {
     padding-left: 0;
     padding-right: 0;
     max-width: 100%;
     overflow-x: hidden;
 }
-.mobile{
+
+/* =================================================================
+   NAVIGATION - CONTAINER 1
+   ================================================================= */
+
+.mobile {
     display: flex;
- }
-    /* <!-- PRIMO CONTAINER: Solo per la navigazione --> */
+}
 
-
-.logo{
+.logo {
     width: 60px;
     height: auto;
     display: flex;
     margin-left: 10px;
 }
-@media (min-width: 768px) {
-    .logo {
-        width: 70px;   /* Tablet */
-        height: auto;
-        margin-left: 30px;
-        margin-right: 30px;
-    }
-}
-@media (min-width: 992px) {
-    .logo {
-        width: 80px;  /* Desktop - più piccolo del 140px originale */
-        height: auto;
-    }
-}
 
-.bg-verde{
+.bg-verde {
     background: #95A04B;
 }
+
 .nav-list {
     list-style: none;
     padding-left: 0;
@@ -51,11 +46,12 @@ html, body{
     width: 100%;
     height: 103px;
 }
+
 .nav-item {
     margin: 0;
     padding: 0;
 }
-/* Links */
+
 .nav-link { 
     color: #403F0B;
     font-size: 24px;
@@ -66,25 +62,37 @@ html, body{
     padding: 8px;
     font-family: 'Roboto Mono', monospace; 
 }
-a:hover{
+
+a:hover {
     color: #403F0B;
     text-decoration: underline;
 }
-/* Bottone di ricerca */
-.btn-cerca{
+
+/* Buttons */
+.btn-cerca {
     background: transparent url('../img/search.png') no-repeat center center;
     background-size: contain;
     border: none;
     padding: 0;
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
     cursor: pointer;
-    font-size: 0; /* Nasconde il testo del bottone */
-    margin: 3px 10px 0 0;
+    font-size: 0;
+    flex-shrink: 0;
 }
 
-/* Bottone menu */
-.btn-menu{
+.btn-cerca:hover {
+    opacity: 0.7;
+}
+
+.bg-verde .col-md-1 {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 20px;
+}
+
+.btn-menu {
     background: transparent url('../img/menù_hamburger.png') no-repeat center center;
     background-size: contain;
     border: none;
@@ -92,11 +100,11 @@ a:hover{
     width: 30px;
     height: 30px;
     cursor: pointer;
-    font-size: 0; /* Nasconde il testo del bottone */
+    font-size: 0;
     margin: 0 10px !important;
 }
-/* Bottone close menu */
-.btn-close{
+
+.btn-close {
     background: transparent url('../img/close.png') no-repeat center center;
     background-size: cover;
     border: none;
@@ -104,14 +112,14 @@ a:hover{
     width: 40px;
     height: 40px;
     cursor: pointer;
-    font-size: 0; /* Nasconde il testo del bottone */
+    font-size: 0;
     position: absolute;
     top: 20px;
     right: 20px;
 }
 
-/* * navigazione mobile */
-.mobile-nav-wrapper{
+/* Mobile Navigation */
+.mobile-nav-wrapper {
     position: fixed;
     top: 0;
     left: 0;
@@ -128,24 +136,28 @@ a:hover{
     transition: all 0.4s ease;
     pointer-events: none;
 }
-.mobile-nav-wrapper.show{
+
+.mobile-nav-wrapper.show {
     opacity: 1;
     transform: translateX(0);
     pointer-events: auto;
 }
-.mobile-nav-wrapper .nav-list{
+
+.mobile-nav-wrapper .nav-list {
     flex-direction: column;
     padding-top: 0;
     align-items: center;
     animation: slideUp 0.5s ease forwards;
 }
-.mobile-nav-wrapper .nav-item{
+
+.mobile-nav-wrapper .nav-item {
     margin: 15px 0;
     width: auto;
     text-align: center;
     opacity: 0;
     animation: fadeInUp 0.5s ease forwards;
 }
+
 .mobile-nav-wrapper .nav-item:nth-child(1) { animation-delay: 0.1s; }
 .mobile-nav-wrapper .nav-item:nth-child(2) { animation-delay: 0.2s; }
 .mobile-nav-wrapper .nav-item:nth-child(3) { animation-delay: 0.3s; }
@@ -172,391 +184,8 @@ a:hover{
         opacity: 1;
     }
 }
-.mobile-nav-wrapper .mobile-link{
-    font-size: 24px;
-    padding: 8px 0;
-}
 
- /* <!-- SECONDO CONTAINER: Per il contenuto con sfondo -->  */
-
- .sfondo{
-    background: linear-gradient(180deg, var(--verde-chiaro, rgba(149, 160, 75, 0.80)) 0%, var(--arancione, rgba(220, 166, 4, 0.80)) 100%);
-    min-height: 85vh;
-}
-.titolo{
-    color: var(--VERDE-SCURO, #403F0B);
-    font-family: 'Roboto Mono', monospace; 
-    font-size: 60px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 106.667%;
-}
-.sottotitolo{
-    color: #403F0B;
-    font-family: 'Roboto', sans-serif;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 122.222%;
-}
-.prima-row img {
-    max-height: 400px;
-    width: auto;
-    object-fit: contain;
-}
-@media (min-width: 768px) and (max-width: 991px) {
-    .prima-row img {
-        max-height: 400px;
-    }
-}
-@media (min-width: 992px) {
-    .prima-row img {
-        max-height: 400px;
-    }
-}
-
-   /* <!-- TERZO CONTAINER: Per il contenuto con sfondo --> */
-
-.sfondo-1{
-    background-color: #95A04BCC;
-   }
-
-   /* <!-- QUARTO CONTAINER: Per il contenuto con sfondo --> */
-
-   .sfondo-2{
-    background: linear-gradient(180deg, var(--verde-chiaro, rgba(149, 160, 75, 0.80)) 0%, rgba(78, 76, 9, 0.80) 100%);
-   }
-   @media (max-width: 767px) {
-    .sfondo-1 .container,
-    .sfondo-2 .container,
-    .sfondo-3 .container,
-    .sfondo-4 .container,
-    .sfondo-5 .container,
-    .sfondo-rosa .container,
-    .sfondo-6 .container,
-    .sfondo-7 .container,
-    .sfondo-8 .container,
-    .sfondo-9 .container{
-        padding-left: 30px;
-        padding-right: 30px;
-    }
-    
-    /* Oppure aumenta i margini delle row */
-    .sfondo-1 .row,
-    .sfondo-2 .row,
-    .sfondo-3 .row,
-    .sfondo-4 .row,
-    .sfondo-5 .row,
-    .sfondo-rosa .row,
-    .sfondo-6 .row,
-    .sfondo-7 .row,
-    .sfondo-8 .row,
-    .sfondo-9 .row{
-        margin-left: 15px;
-        margin-right: 15px;
-    }
-}
-
-    /* <!-- QUINTO CONTAINER: Per il contenuto con sfondo --> */
-.sfondo-rosa{
-    background: rgba(221, 202, 162, 0.80);
-}
-
-/* Centrare la citazione nel quinto container */
-.sfondo-rosa .row{
-    justify-content: center;
-    align-items: center;    
-}
-.sfondo-rosa .scritta-centrale{
-    text-align: center; 
-    width: 100%;         
-}
-
-/* utility to keep a heading on a single line */
-.no-wrap{
-    white-space: nowrap;
-    overflow: hidden; /* prevent overflow visual artifacts */
-    text-overflow: ellipsis; /* in case container is too small, show ellipsis */
-}
-
-/* Responsive rules for the fifth container (sfondo-rosa) */
-.sfondo-rosa .container.content-wrapper{
-    padding-top: 80px; /* default desktop spacing */
-    padding-bottom: 80px;
-}
-
-
-/* Title and subtitle sizing (scales with viewport) */
-.sfondo-rosa .titolo{
-    /* smaller than main .titolo; uses clamp for responsive scaling */
-    font-size: clamp(28px, 4.5vw, 44px);
-    line-height: 1.05;
-}
-.sfondo-rosa .sottotitolo{
-    font-size: clamp(13px, 2.2vw, 18px);
-    line-height: 1.4;
-    max-width: 90%;
-    margin: 0 auto; /* keep it centered under title */
-}
-
-/* Make the 'no-wrap' title responsive: allow wrapping on smaller screens so text never gets clipped */
-@media (max-width: 767px){
-    .sfondo-rosa .container.content-wrapper{
-        padding-top: 40px;
-        padding-bottom: 40px;
-    }
-    .sfondo-rosa .titolo{ font-size: clamp(40px, 7vw, 36px); }
-    .sfondo-rosa .sottotitolo{ font-size: 20px; }
-    /* allow wrapping on extra small screens */
-    .sfondo-rosa .no-wrap{ white-space: normal; text-overflow: clip; }
-}
-
-@media (min-width: 768px) and (max-width: 991px){
-    /* tablet spacing */
-    .sfondo-rosa .container.content-wrapper{
-        padding-top: 60px;
-        padding-bottom: 60px;
-    }
-    .sfondo-rosa .titolo{ font-size: clamp(24px, 4.2vw, 38px); }
-    .sfondo-rosa .sottotitolo{ font-size: 15px; }
-
-    /* Rendere le immagini più grandi su iPad verticale */
-    .sfondo-5 .tight-gallery > .col-md-4,
-    .sfondo-9 .tight-gallery > .col-md-4 {
-        flex: 0 0 calc(50% - 4px);
-    }
-}
-
- /* <!-- SESTO CONTAINER: Per il contenuto con sfondo --> */
-.sfondo-4{
-    background: linear-gradient(180deg, rgba(221, 202, 162, 0.80) 0%, rgba(236, 214, 92, 0.80) 100%);
-}
-
-.sfondo-4 .titolo{
-    font-size: 48px;
-    margin-top: 0;
-}
-
-.sfondo-4 .col-sm-12.col-md-6.col-lg-4 {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.sfondo-4 .sottotitolo {
-    margin-bottom: 20px;
-}
-
-.sfondo-4 .nav-link {
-    margin-top: auto;
-}
-
-@media (max-width: 767px) {
-    .sfondo-4 .titolo{
-        font-size: 40px;
-    }
-}
-/* <!-- SETTIMO CONTAINER: Per il contenuto con sfondo --> */
-.sfondo-5{
-background: linear-gradient(180deg, rgba(236, 214, 92, 0.80) 0%, rgba(236, 214, 92, 0.80) 100%);}
-
-/* Gallery (sfondo-5) - images occupy 4 columns each on md+ and sit close together */
-.sfondo-5 .tight-gallery{
-    /* tighten default gutters for this gallery */
-    margin-left: -6px;
-    margin-right: -6px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px; /* small visual gap */
-}
-.sfondo-5 .tight-gallery > [class*='col-']{
-    padding-left: 6px;
-    padding-right: 6px;
-}
-.sfondo-5 .project-img{
-    display: block;
-    width: 100%;
-    height: auto;
-    object-fit: cover; /* keep aspect but fill container nicely */
-    border-radius: 4px;
-}
-
-/* <!-- OTTAVO CONTAINER: Per il contenuto con sfondo --> */
-.sfondo-6{
-  background: linear-gradient(180deg, var(--giallo, rgba(236, 214, 92, 0.80)) 0%, rgba(220, 166, 4, 0.80) 100%);
-}
-
-.sfondo-6 .titolo{
-    font-size: 48px;
-}
-
-@media (max-width: 767px) {
-    .sfondo-6 .titolo{
-        font-size: 40px;
-    }
-}
-
-/* <!-- NONO CONTAINER: Immagine singola centrata da 8 colonne --> */
-.sfondo-7 .project-img{
-    display: block;
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 4px;
-}
-.sfondo-7 .project-figure{
-    margin: 0;
-    text-align: center;
-}
-.sfondo-7{
-    background: rgba(220, 166, 4, 0.80);
-}
-
-/* <!-- DECIMO CONTAINER: Per il contenuto con sfondo --> */
-.sfondo-8{
-    background: linear-gradient(180deg, var(--arancione, rgba(220, 166, 4, 0.80)) 0%, rgba(221, 202, 162, 0.80) 100%);
-}
-.sfondo-8 .titolo{
-    font-size: 48px;
-}
-.sfondo-8 .sottotitolo{
-    margin-bottom: 30px;
-}
-
-@media (max-width: 767px) {
-    .sfondo-8 .titolo{
-        font-size: 40px;
-    }
-}
-@media (max-width: 767px) {
-    .sfondo-8 .col-sm-12.col-md-6.col-lg-4 {
-        display: flex;
-        flex-direction: column;
-    }
-    
-    .sfondo-8 .nav-link {
-        margin-top: 0;
-    }
-}
-.sfondo-8 .col-sm-12.col-md-6.col-lg-4 {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.sfondo-8 .sottotitolo {
-    margin-bottom: 20px;
-}
-
-.sfondo-8 .nav-link {
-    margin-top: auto;
-}
-.sfondo-8 .col-sm-12.col-md-6.col-lg-4 {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.sfondo-8 .sottotitolo {
-    margin-bottom: 20px;
-}
-
-@media (max-width: 767px) {
-    .sfondo-8 .col-sm-12.col-md-6.col-lg-4 {
-        display: block;
-    }
-    
-    .sfondo-8 .nav-link {
-        margin-top: 0;
-    }
-    
-    .sfondo-8 .col-12.col-lg-6 {
-        margin-top: 30px;
-    }
-}
-
-/* <!-- UNDICESIMO CONTAINER: Per il contenuto con sfondo --> */
-.sfondo-9{
-    background: rgba(221, 202, 162, 0.80);
-}
-
-.sfondo-9 .tight-gallery{
-    /* tighten default gutters for this gallery */
-    margin-left: -6px;
-    margin-right: -6px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px; /* small visual gap */
-}
-
-.sfondo-9 .tight-gallery > [class*='col-']{
-    padding-left: 6px;
-    padding-right: 6px;
-}
-
-.sfondo-9 .project-img{
-    display: block;
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 4px;
-}
-
-/* <!-- DODICESIMO CONTAINER: Footer --> */
-.footer {
-    min-height: auto;
-    background: #DDCAA2;
-}
-
-.footer-text {
-    font-size: 18px;
-    color: #403F0B;
-    font-family: Roboto monospace, monospace;
-}
-
-.footer-nav-wrapper {
-    display: flex;
-    gap: 40px;
-    justify-content: flex-end;
-    flex-wrap: wrap;
-}
-
-.footer-link {
-    color: #403F0B;
-    text-decoration: none;
-    font-size: 24px;
-    transition: 0.3s ease;
-    font-family: Roboto monospace, monospace;
-}
-
-
-@media (max-width: 767px) {
-    .footer-nav-wrapper {
-        justify-content: flex-start;
-        gap: 20px;
-    }
-}
-
-.footer-arrow {
-    display: inline-block;
-    text-decoration: none;
-    transition: transform 0.3s ease;
-    margin-left: auto;
-}
-
-.footer-arrow img {
-    width: 24px;
-    height: 24px;
-    display: block;
-}
-
-.footer-arrow:hover {
-    transform: translateY(-5px);
-}
-
-/* Barra di ricerca */
+/* Search Bar */
 .search-bar {
     position: fixed;
     top: 0;
@@ -642,4 +271,627 @@ background: linear-gradient(180deg, rgba(236, 214, 92, 0.80) 0%, rgba(236, 214, 
     cursor: pointer;
     padding: 5px;
     font-size: 0;
+}
+
+/* =================================================================
+   TYPOGRAPHY & COMMON ELEMENTS
+   ================================================================= */
+
+.titolo {
+    color: #403F0B;
+    font-family: 'Roboto Mono', monospace; 
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 106.667%;
+}
+
+.sottotitolo {
+    color: #403F0B;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 122.222%;
+}
+
+/* =================================================================
+   CONTAINER 2 - HERO SECTION
+   ================================================================= */
+
+.sfondo {
+    background: linear-gradient(180deg, rgba(149, 160, 75, 0.80) 0%, rgba(220, 166, 4, 0.80) 100%);
+    min-height: 85vh;
+}
+
+.prima-row img {
+    max-height: 400px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* =================================================================
+   CONTAINER 3 - CHI SONO
+   ================================================================= */
+
+.sfondo-1 {
+    background-color: #95A04BCC;
+}
+
+.sfondo-1 .content-wrapper {
+    padding-top: 50px;
+    padding-bottom: 1px;
+}
+
+.img-chi-sono {
+    width: 100%;
+    height: auto;
+    max-height: none;
+}
+
+/* =================================================================
+   CONTAINER 4 - LA MIA CITTÀ
+   ================================================================= */
+
+.sfondo-2 {
+    background: linear-gradient(180deg, rgba(149, 160, 75, 0.80) 0%, rgba(78, 76, 9, 0.80) 100%);
+}
+
+.sfondo-2 .content-wrapper {
+    padding-top: 0;
+    padding-bottom: 50px;
+}
+
+/* =================================================================
+   CONTAINER 5 - PROGETTI
+   ================================================================= */
+
+.sfondo-rosa {
+    background: rgba(221, 202, 162, 0.80);
+}
+
+.sfondo-rosa .content-wrapper {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.sfondo-rosa .row {
+    justify-content: center;
+    align-items: center;    
+}
+
+.sfondo-rosa .scritta-centrale {
+    text-align: center; 
+    width: 100%;         
+}
+
+.sfondo-rosa .titolo {
+    font-size: clamp(28px, 4.5vw, 44px);
+    line-height: 1.05;
+}
+
+.sfondo-rosa .sottotitolo {
+    font-size: clamp(13px, 2.2vw, 18px);
+    line-height: 1.4;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.no-wrap {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* =================================================================
+   CONTAINER 6 - ROBOTIZR
+   ================================================================= */
+
+.sfondo-4 {
+    background: linear-gradient(180deg, rgba(221, 202, 162, 0.80) 0%, rgba(236, 214, 92, 0.80) 100%);
+}
+
+.sfondo-4 .content-wrapper {
+    padding-top: 0;
+    padding-bottom: 50px;
+}
+
+.sfondo-4 .titolo {
+    font-size: 48px;
+    margin-top: 0;
+}
+
+.sfondo-4 .col-sm-12.col-md-6.col-lg-4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sfondo-4 .sottotitolo {
+    margin-bottom: 20px;
+}
+
+.sfondo-4 .nav-link {
+    margin-top: auto;
+}
+
+/* =================================================================
+   CONTAINER 7 - GALLERIA
+   ================================================================= */
+
+.sfondo-5 {
+    background: linear-gradient(180deg, rgba(236, 214, 92, 0.80) 0%, rgba(236, 214, 92, 0.80) 100%);
+}
+
+.sfondo-5 .content-wrapper {
+    padding-top: 0;
+    padding-bottom: 50px;
+}
+
+.sfondo-5 .tight-gallery {
+    margin-left: -6px;
+    margin-right: -6px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+}
+
+.sfondo-5 .tight-gallery > [class*='col-'] {
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+.sfondo-5 .project-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 4px;
+}
+.project-figure figcaption {
+    color: #403F0B;
+    font-family: Roboto;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+/* =================================================================
+   CONTAINER 8 - ZUEGG
+   ================================================================= */
+
+.sfondo-6 {
+    background: linear-gradient(180deg, rgba(236, 214, 92, 0.80) 0%, rgba(220, 166, 4, 0.80) 100%);
+}
+
+.sfondo-6 .content-wrapper {
+    padding-top: 0;
+    padding-bottom: 50px;
+}
+
+.sfondo-6 .titolo {
+    font-size: 48px;
+}
+
+/* =================================================================
+   CONTAINER 9 - IMMAGINE SINGOLA
+   ================================================================= */
+
+.sfondo-7 {
+    background: rgba(220, 166, 4, 0.80);
+}
+
+.sfondo-7 .content-wrapper {
+    padding-top: 0;
+    padding-bottom: 50px;
+}
+
+.sfondo-7 .project-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.sfondo-7 .project-figure {
+    margin: 0;
+    text-align: center;
+}
+
+/* =================================================================
+   CONTAINER 10 - PROTEZIONE
+   ================================================================= */
+
+.sfondo-8 {
+    background: linear-gradient(180deg, rgba(220, 166, 4, 0.80) 0%, rgba(221, 202, 162, 0.80) 100%);
+}
+
+.sfondo-8 .content-wrapper {
+    padding-top: 0;
+    padding-bottom: 50px;
+}
+
+.sfondo-8 .titolo {
+    font-size: 48px;
+}
+
+.sfondo-8 .col-sm-12.col-md-6.col-lg-4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sfondo-8 .sottotitolo {
+    margin-bottom: 20px;
+}
+
+.sfondo-8 .nav-link {
+    margin-top: auto;
+}
+
+/* =================================================================
+   CONTAINER 11 - GALLERIA RENDER
+   ================================================================= */
+
+.sfondo-9 {
+    background: rgba(221, 202, 162, 0.80);
+}
+
+.sfondo-9 .content-wrapper {
+    padding-top: 0;
+    padding-bottom: 50px;
+}
+
+.sfondo-9 .tight-gallery {
+    margin-left: -6px;
+    margin-right: -6px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+}
+
+.sfondo-9 .tight-gallery > [class*='col-'] {
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+.sfondo-9 .project-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* =================================================================
+   CONTAINER 12 - CONTATTI
+   ================================================================= */
+
+.sfondo-contatti {
+    background: linear-gradient(180deg, rgba(149, 160, 75, 0.80) 0%, rgba(221, 202, 162, 0.80) 100%);
+}
+
+.sfondo-contatti .content-wrapper {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.contatto-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.contatto-item:hover {
+    transform: translateX(10px);
+}
+
+.contatto-icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 30px;
+    flex-shrink: 0;
+}
+
+.contatto-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.contatto-info {
+    flex: 1;
+}
+
+.contatto-label {
+    color: #403F0B;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.contatto-value {
+    color: #403F0B;
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    margin: 0;
+}
+
+/* =================================================================
+    CONTAINER 14 - FORM 
+   ================================================================= */
+/* Bottone Get in Touch */
+.btn-contact {
+    display: inline-block;
+    background: #403F0B;
+    color: white;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 15px 40px;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-contact:hover {
+    background: transparent;
+    color: #403F0B;
+    border: 2px solid #403F0B;
+    transform: translateY(-3px);
+}
+
+/* Form Contatti */
+.sfondo-form {
+    background: #DDCAA2;
+}
+
+.sfondo-form .content-wrapper {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.contact-form {
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #403F0B;
+    border-radius: 8px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: #403F0B;
+    background: rgba(255, 255, 255, 0.5);
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.8);
+    border-color: #95A04B;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.btn-submit {
+    background: #403F0B;
+    color: white;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 15px 50px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+    background: #95A04B;
+    transform: translateY(-3px);
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #403F0B;
+    opacity: 0.7; /* facoltativo */
+}
+
+/* =================================================================
+    CONTAINER 13 - FOOTER
+   ================================================================= */
+.footer {
+    min-height: auto;
+    background: #DDCAA2;
+}
+
+.footer-text {
+    font-size: 18px;
+    color: #403F0B;
+    font-family: Roboto monospace, monospace;
+}
+
+.footer-nav-wrapper {
+    display: flex;
+    gap: 40px;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+.footer-link {
+    color: #403F0B;
+    text-decoration: none;
+    font-size: 24px;
+    transition: 0.3s ease;
+    font-family: Roboto monospace, monospace;
+}
+
+.footer-arrow {
+    display: inline-block;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+    margin-left: auto;
+}
+
+.footer-arrow img {
+    width: 24px;
+    height: 24px;
+    display: block;
+}
+
+.footer-arrow:hover {
+    transform: translateY(-5px);
+}
+
+/* =================================================================
+   RESPONSIVE - TABLET
+   ================================================================= */
+
+@media (min-width: 768px) {
+    .logo {
+        width: 70px;
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .sfondo-rosa .content-wrapper {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    
+    .sfondo-rosa .titolo { 
+        font-size: clamp(24px, 4.2vw, 38px); 
+    }
+    
+    .sfondo-rosa .sottotitolo { 
+        font-size: 15px; 
+    }
+
+    .sfondo-5 .tight-gallery > .col-md-4,
+    .sfondo-9 .tight-gallery > .col-md-4 {
+        flex: 0 0 calc(50% - 4px);
+    }
+}
+
+/* =================================================================
+   RESPONSIVE - DESKTOP
+   ================================================================= */
+
+@media (min-width: 992px) {
+    .logo {
+        width: 80px;
+    }
+}
+
+/* =================================================================
+   RESPONSIVE - MOBILE
+   ================================================================= */
+
+@media (max-width: 767px) {
+    /* Container padding */
+    .sfondo-1 .container,
+    .sfondo-2 .container,
+    .sfondo-4 .container,
+    .sfondo-5 .container,
+    .sfondo-rosa .container,
+    .sfondo-6 .container,
+    .sfondo-7 .container,
+    .sfondo-8 .container,
+    .sfondo-9 .container,
+    .sfondo-contatti .container {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    
+    .sfondo-1 .row,
+    .sfondo-2 .row,
+    .sfondo-4 .row,
+    .sfondo-5 .row,
+    .sfondo-rosa .row,
+    .sfondo-6 .row,
+    .sfondo-7 .row,
+    .sfondo-8 .row,
+    .sfondo-9 .row,
+    .sfondo-contatti .row {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    /* Typography */
+    .sfondo-rosa .content-wrapper {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    
+    .sfondo-rosa .titolo { 
+        font-size: clamp(40px, 7vw, 36px); 
+    }
+    
+    .sfondo-rosa .sottotitolo { 
+        font-size: 20px; 
+    }
+    
+    .sfondo-rosa .no-wrap { 
+        white-space: normal; 
+        text-overflow: clip; 
+    }
+
+    .sfondo-4 .titolo,
+    .sfondo-6 .titolo,
+    .sfondo-8 .titolo {
+        font-size: 40px;
+    }
+
+    /* Container 8 - Protezione mobile adjustments */
+    .sfondo-8 .col-sm-12.col-md-6.col-lg-4 {
+        display: block;
+    }
+    
+    .sfondo-8 .nav-link {
+        margin-top: 0;
+    }
+    
+    .sfondo-8 .col-12.col-lg-6 {
+        margin-top: 30px;
+    }
+
+    /* Contatti mobile */
+    .contatto-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contatto-icon {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .contatto-value {
+        font-size: 20px;
+    }
+
+    /* Footer */
+    .footer-nav-wrapper {
+        justify-content: flex-start;
+        gap: 20px;
+    }
 }
