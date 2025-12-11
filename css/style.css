@@ -85,13 +85,6 @@ a:hover {
     opacity: 0.7;
 }
 
-.bg-verde .col-md-1 {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding-right: 20px;
-}
-
 .btn-menu {
     background: transparent url('../img/menù_hamburger.png') no-repeat center center;
     background-size: contain;
@@ -272,6 +265,7 @@ a:hover {
     padding: 5px;
     font-size: 0;
 }
+
 
 /* =================================================================
    TYPOGRAPHY & COMMON ELEMENTS
@@ -894,4 +888,10 @@ a:hover {
         justify-content: flex-start;
         gap: 20px;
     }
+}
+.bg-verde .col-md-1 {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 60px;
 }
