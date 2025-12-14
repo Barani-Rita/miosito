@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="description" content="Portfolio personale di Rita Barani - Design e comunicazione visiva">
     <title>Rita Barani - Portfolio Personale</title>
     
@@ -275,7 +277,7 @@
                     
                     <div class="contatto-item">
                         <div class="contatto-icon">
-                            <img src="img/icona_telefono.png" alt="">
+                            <img src="img/icona_telefono.png" alt="" aria-hidden="true">
                         </div>
                         <div class="contatto-info">
                             <p class="contatto-label">Telefono</p>
@@ -285,7 +287,7 @@
 
                     <div class="contatto-item">
                         <div class="contatto-icon">
-                            <img src="img/icona_mail.png" alt="">
+                            <img src="img/icona_mail.png" alt="" aria-hidden="true">
                         </div>
                         <div class="contatto-info">
                             <p class="contatto-label">Email</p>
@@ -295,7 +297,7 @@
 
                     <div class="contatto-item">
                         <div class="contatto-icon">
-                            <img src="img/icona_posizione.png" alt="">
+                            <img src="img/icona_posizione.png" alt="" aria-hidden="true">
                         </div>
                         <div class="contatto-info">
                             <p class="contatto-label">Luogo</p>
@@ -312,7 +314,7 @@
                 <div class="row mb-5 pt-5 pb-5">
                     <div class="col-12 col-lg-6 offset-lg-3">
                         <h2 class="titolo text-center mb-4">SCRIVIMI</h2>
-                        <form class="contact-form" method="post" action="#">
+                        <form class="contact-form" onsubmit="event.preventDefault(); alert('Form non ancora configurato. Aggiungi un backend per inviare email.');">
                             <div class="form-group">
                                 <label for="nome" class="visually-hidden">Nome</label>
                                 <input type="text" id="nome" name="nome" placeholder="Nome" required>
@@ -342,7 +344,7 @@
                 <div class="col-12 col-md-3 mb-4 mb-md-0 d-flex justify-content-between align-items-center">
                     <p class="footer-text mb-0">© 2025 <br>Privacy - Cookies</p>
                     <a href="#" class="footer-arrow d-md-none" aria-label="Torna su">
-                        <img src="img/freccia.png" alt="">
+                        <img src="img/freccia.png" alt="" aria-hidden="true">
                     </a>
                 </div>
                 <nav class="col-12 col-md-9 text-md-end" aria-label="Navigazione footer">
