@@ -3,33 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>portfolio personale</title>
-<link rel="icon" type="image/png" sizes="32x32" href="img/favicon.png">
-<link rel="icon" type="image/png" sizes="16x16" href="img/favicon.png">
-<link rel="apple-touch-icon" sizes="180x180" href="img/favicon.png">
+    <meta name="description" content="Portfolio personale di Rita Barani - Design e comunicazione visiva">
+    <title>Rita Barani - Portfolio Personale</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon.png">
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="css/bootstrap-grid.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="min-width">
 
     <!-- CONTAINER 1: NAVIGATION -->
-    <div class="container-fluid">
-    
+    <nav class="container-fluid" role="navigation" aria-label="Navigazione principale">
         <div class="row pt-0 align-items-center bg-verde">
             <div class="col-6 col-md-2 mobile pe-4">
-              <a href="#"><img class="logo" src="img/logo_Rita_Barani.svg" alt="logo rita barani"></a>
+                <a href="#" aria-label="Torna alla home">
+                    <img class="logo" src="img/logo_Rita_Barani.svg" alt="Logo Rita Barani">
+                </a>
             </div>
             <div class="col-6 d-md-none d-flex justify-content-end align-items-center pe-5">
-                <button class="btn btn-menu">Menu</button>
+                <button class="btn btn-menu" aria-label="Apri menu" aria-expanded="false">Menu</button>
             </div>
            
             <div class="col-md-9 nav-wrapper d-none d-md-block">
                 <ul class="nav-list">
                     <li class="nav-item">
-                        <a href="#" class="nav-link selected"><strong>Home</strong></a>
+                        <a href="#" class="nav-link selected" aria-current="page"><strong>Home</strong></a>
                     </li>
                     <li class="nav-item">
                         <a href="#chi-sono" class="nav-link"><strong>Chi sono</strong></a>
@@ -43,62 +51,60 @@
                 </ul>
             </div>
             <div class="col-md-1 d-none d-md-flex justify-content-end align-items-center">
-                <button class="btn btn-cerca" id="btn-search">Cerca</button>
+                <button class="btn btn-cerca" id="btn-search" aria-label="Cerca nel sito">Cerca</button>
             </div>
         </div>
 
         <!-- Search Bar -->
-        <div id="search-bar" class="search-bar hidden">
-            <input type="text" id="search-input" class="search-input" placeholder="Cerca nel sito...">
-            <div id="search-results" class="search-results"></div>
-            <button id="close-search" class="close-search">✕</button>
+        <div id="search-bar" class="search-bar hidden" role="search">
+            <input type="text" id="search-input" class="search-input" placeholder="Cerca nel sito..." aria-label="Campo di ricerca">
+            <div id="search-results" class="search-results" role="region" aria-live="polite"></div>
+            <button id="close-search" class="close-search" aria-label="Chiudi ricerca">✕</button>
         </div>
 
         <!-- Mobile Navigation -->
-        <div class="mobile-nav-wrapper d-lg-none">
-            <button class="btn btn-close mb-3">Close</button>
+        <div class="mobile-nav-wrapper d-lg-none" role="dialog" aria-label="Menu mobile">
+            <button class="btn btn-close mb-3" aria-label="Chiudi menu">Close</button>
             <ul class="nav-list">
-              <li class="nav-item">
-                  <a href="#" class="nav-link"><strong>Home</strong></a>
-              </li>
-              <li class="nav-item">
-                  <a href="#chi-sono" class="nav-link selected"><strong>Chi sono</strong></a>
-              </li>
-              <li class="nav-item">
-                  <a href="#progetti" class="nav-link"><strong>Progetti</strong></a>
-              </li>
-              <li class="nav-item">
-                  <a href="#contatti" class="nav-link"><strong>Contatti</strong></a>
-              </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link"><strong>Home</strong></a>
+                </li>
+                <li class="nav-item">
+                    <a href="#chi-sono" class="nav-link"><strong>Chi sono</strong></a>
+                </li>
+                <li class="nav-item">
+                    <a href="#progetti" class="nav-link"><strong>Progetti</strong></a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contatti" class="nav-link"><strong>Contatti</strong></a>
+                </li>
             </ul> 
         </div>
-    </div>
-
+    </nav>
 
     <!-- CONTAINER 2: HERO SECTION -->
-    <div class="container-fluid sfondo d-flex align-items-center">   
-          <div class="mx-5 row prima-row mt-5 mb-5 align-items-center">
-                <div class="col-12 col-md-5 mb-3 mb-md-0">
-                    <p class="sottotitolo"><strong>PORTFOLIO PERSONALE</strong></p>
-                    <h1 class="titolo">RITA<br>BARANI</h1>
-                    <p class="sottotitolo">Ciao, io sono Rita e studio Design all'università di San Marino. Se vuoi sapere qualcosa in più su di me puoi scorrere!</p>
-                </div>
-                <div class="col-12 col-md-7 text-center">
-                    <img class="img-fluid" src="img/Rectangle 1.png" alt="foto Rita Barani">
-                </div>
-          </div>
-    </div>
-
+    <header class="container-fluid sfondo d-flex align-items-center">   
+        <div class="mx-5 row prima-row mt-5 mb-5 align-items-center">
+            <div class="col-12 col-md-5 mb-3 mb-md-0">
+                <p class="sottotitolo"><strong>PORTFOLIO PERSONALE</strong></p>
+                <h1 class="titolo">RITA<br>BARANI</h1>
+                <p class="sottotitolo">Ciao, io sono Rita e studio Design all'università di San Marino. Se vuoi sapere qualcosa in più su di me puoi scorrere!</p>
+            </div>
+            <div class="col-12 col-md-7 text-center">
+                <img class="img-fluid" src="img/Rectangle 1.png" alt="Foto di Rita Barani">
+            </div>
+        </div>
+    </header>
 
     <!-- CONTAINER 3: CHI SONO -->
-    <div class="sfondo-1" id="chi-sono">
+    <section class="sfondo-1" id="chi-sono">
         <div class="container content-wrapper">
             <div class="row mb-5 pt-5 pb-5 align-items-center">
                 <div class="col-12 col-lg-6">
-                    <img class="img-chi-sono" src="img/Rectangle 16.png" alt="foto Edit Napoli 2024">
+                    <img class="img-chi-sono" src="img/Rectangle 16.png" alt="Rita Barani all'evento Edit Napoli 2024">
                 </div>
                 <div class="col-sm-12 col-md-6 col-lg-4 mt-4 offset-lg-1">
-                    <h1 class="titolo">CHI SONO</h1>
+                    <h2 class="titolo">CHI SONO</h2>
                     <p class="sottotitolo">
                         Lavoro nel campo della comunicazione visiva e del prodotto, in particolare mi piace molto la grafica editoriale e il packaging.
                         Durante il mio percorso di studi ho costituito diverse competenze e ho imparato ad utilizzare diversi programmi come ad esempio: Rhinoceros 3D, Fusion, Illustrator, Photoshop, InDesign ecc..
@@ -107,27 +113,27 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- CONTAINER 4: LA MIA CITTÀ -->
-    <div class="sfondo-2">
+    <section class="sfondo-2">
         <div class="container content-wrapper">
             <div class="row mb-5 pt-4 pb-4">
                 <div class="col-sm-12 col-md-6 col-lg-5 mt-4 offset-lg-1 d-flex flex-column justify-content-center">
-                    <h1 class="titolo">LA MIA CITTA'</h1>
+                    <h2 class="titolo">LA MIA CITTÀ</h2>
                     <p class="sottotitolo">
-                        Sono nata e cresciuta in provincia di Reggio Emilia, Il centro storico è un intreccio di strade antiche e edifici d'epoca. Il cuore culturale e sociale, conserva un fascino autentico e accogliente.
+                        Sono nata e cresciuta in provincia di Reggio Emilia. Il centro storico è un intreccio di strade antiche e edifici d'epoca. Il cuore culturale e sociale, conserva un fascino autentico e accogliente.
                     </p>
                 </div>
                 <div class="col-12 col-lg-5 mb-0 mt-4 offset-lg-1">
-                    <img class="img-fluid" src="img/reggio emilia.png" alt="Reggio Emilia">
+                    <img class="img-fluid" src="img/reggio emilia.png" alt="Vista del centro storico di Reggio Emilia">
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- CONTAINER 5: PROGETTI -->
-    <div class="sfondo-rosa" id="progetti">
+    <section class="sfondo-rosa" id="progetti">
         <div class="container content-wrapper">
             <div class="row mb-5 pt-4 pb-4">
                 <div class="col-12 col-md-8 col-lg-8 mx-auto d-flex flex-column align-items-center justify-content-center text-center">
@@ -136,34 +142,34 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- CONTAINER 6: ROBOTIZR -->
-    <div class="sfondo-4" id="robotizr">
+    <section class="sfondo-4" id="robotizr">
         <div class="container content-wrapper">
             <div class="row mb-5 pt-4 pb-4">
                 <div class="col-12 col-lg-6">
-                    <img class="img-chi-sono" src="img/immagine_row_6.png" alt="foto logo Robotizr">
+                    <img class="img-chi-sono" src="img/immagine_row_6.png" alt="Logo Robotizr progettato da Rita Barani">
                 </div>
                 <div class="col-sm-12 col-md-6 col-lg-4 mt-4 offset-lg-1">
-                    <h1 class="titolo">ROBOTIZR</h1>
+                    <h2 class="titolo">ROBOTIZR</h2>
                     <p class="sottotitolo">
-                        Questo è stato un progetto che ho realizzato per dei committenti esterni, in particolare era una startup, che aveva necessità di cambiare il marchio. L'obbiettivo è stato quello di creare qualcosa che esprimesse i valori dell'azienda come la professionalità, la precisione e la dinamicità. 
+                        Questo è stato un progetto che ho realizzato per dei committenti esterni, in particolare era una startup, che aveva necessità di cambiare il marchio. L'obiettivo è stato quello di creare qualcosa che esprimesse i valori dell'azienda come la professionalità, la precisione e la dinamicità. 
                         Oltre alla realizzazione del marchio ho realizzato anche il manuale che mostra tutti i possibili modi di applicazione del marchio.
                     </p>
-                    <a href="img/manuale del marchio_converted.pdf" class="nav-link"><strong>> Presentazione progetto</strong></a>
+                    <a href="img/manuale del marchio_converted.pdf" class="nav-link" target="_blank" rel="noopener noreferrer"><strong>&gt; Presentazione progetto</strong></a>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
     
     <!-- CONTAINER 7: GALLERIA -->
-    <div class="sfondo-5">
+    <section class="sfondo-5">
         <div class="container content-wrapper">
             <div class="row mb-5 pt-4 pb-4 tight-gallery">
                 <div class="col-12 col-md-4 col-lg-5">
                     <figure class="project-figure">
-                        <img class="project-img" src="img/immagine1_row_7.png" alt="immagine progetto 1">
+                        <img class="project-img" src="img/immagine1_row_7.png" alt="Agenda aziendale Robotizr">
                         <figcaption class="project-caption">
                             <p class="caption-title">Agenda aziendale</p>
                             <p class="caption-sub">2023 - 2024</p>
@@ -172,7 +178,7 @@
                 </div>
                 <div class="col-12 col-md-4 col-lg-5">
                     <figure class="project-figure">
-                        <img class="project-img" src="img/immagine2_row_7.png" alt="immagine progetto 2">
+                        <img class="project-img" src="img/immagine2_row_7.png" alt="Tote-bag aziendale Robotizr">
                         <figcaption class="project-caption">
                             <p class="caption-title">Tote-bag aziendale</p>
                             <p class="caption-sub">2023 - 2024</p>
@@ -181,66 +187,66 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
     
     <!-- CONTAINER 8: ZUEGG -->
-    <div class="sfondo-6" id="zuegg">
+    <section class="sfondo-6" id="zuegg">
         <div class="container content-wrapper">
             <div class="row mb-5 pt-4 pb-4">
                 <div class="col-sm-12 col-md-6 col-lg-4 mt-4 offset-lg-1">
-                    <h1 class="titolo">ZUEGG</h1>
+                    <h2 class="titolo">ZUEGG</h2>
                     <p class="sottotitolo">
-                        Questo è stato un progetto che ho realizzato il mio ultimo anno di superiori, precisamente nel 2024. Lo scopo era quello di creare un packaging per un prodotto a nostra scelta, Io ho scelto di realizzare la confezione di un set di confetture per formaggi della marca "Zuegg". Ho cercato di giocare sull'estetica del prodotto ma soprattutto sulla funzionalità del packaging che in questo caso non è solo di protezione ma anche di presentazione. Il contenitore infatti una volta aperto può essere utilizzato come centrotavola per servire le confetture con i formaggi.
+                        Questo è stato un progetto che ho realizzato il mio ultimo anno di superiori, precisamente nel 2024. Lo scopo era quello di creare un packaging per un prodotto a nostra scelta. Io ho scelto di realizzare la confezione di un set di confetture per formaggi della marca "Zuegg". Ho cercato di giocare sull'estetica del prodotto ma soprattutto sulla funzionalità del packaging che in questo caso non è solo di protezione ma anche di presentazione. Il contenitore infatti una volta aperto può essere utilizzato come centrotavola per servire le confetture con i formaggi.
                     </p>
                 </div>
                 <div class="col-12 col-lg-6 mb-0 mt-4 offset-lg-1">
-                    <img class="img-chi-sono" src="img/immagine_row_8.png" alt="Schizzi inizili di progetto">
+                    <img class="img-chi-sono" src="img/immagine_row_8.png" alt="Schizzi iniziali del progetto packaging Zuegg">
                 </div>
             </div>
         </div>
-    </div> 
+    </section> 
 
     <!-- CONTAINER 9: IMMAGINE SINGOLA -->
-    <div class="sfondo-7">
+    <section class="sfondo-7">
         <div class="container content-wrapper">
             <div class="row mb-5 pt-4 pb-4">
                 <div class="col-12 col-md-10 col-lg-8 mx-auto">
                     <figure class="project-figure">
-                        <img class="project-img" src="img/immaginerow_9.png" alt="immagine progetto">
+                        <img class="project-img" src="img/immaginerow_9.png" alt="Angolazioni del packaging Zuegg">
                         <figcaption class="project-caption">
-                            <p class="caption-title">Angolazioni varie del modello di packaging realizzato in carta con dimensioni reali 2024 -2025</p>
+                            <p class="caption-title">Angolazioni varie del modello di packaging realizzato in carta con dimensioni reali 2024 - 2025</p>
                         </figcaption>
                     </figure>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- CONTAINER 10: PROTEZIONE -->
-    <div class="sfondo-8" id="protezione">
+    <section class="sfondo-8" id="protezione">
         <div class="container content-wrapper">
             <div class="row mb-5 pt-4 pb-4">
                 <div class="col-sm-12 col-md-6 col-lg-4 mt-4 offset-lg-1">
-                    <h1 class="titolo">PROTEZIONE</h1>
+                    <h2 class="titolo">PROTEZIONE</h2>
                     <p class="sottotitolo">
-                        Il paraschiena è un progetto che ho sviluppato durante il mio prima anno di università (2024/2025). Con questo lavoro mi sono approcciata per la prima volta a software per la modellazione 3D ed ho imparato a creare rendering e tavole tecniche digitali. Un altro aspetto interessante del progetto è stato lo studio delle varie componenti che dovevano formare il paraschiena, in particolare questo era utilizzata per lo sci e quindi ho dovuto fare uno studio sia sulle zone più a rischio della schiena che dei materiali che potessero essere resistenti e comodi allo stesso tempo.                    
+                        Il paraschiena è un progetto che ho sviluppato durante il mio primo anno di università (2024/2025). Con questo lavoro mi sono approcciata per la prima volta a software per la modellazione 3D ed ho imparato a creare rendering e tavole tecniche digitali. Un altro aspetto interessante del progetto è stato lo studio delle varie componenti che dovevano formare il paraschiena, in particolare questo era utilizzato per lo sci e quindi ho dovuto fare uno studio sia sulle zone più a rischio della schiena che dei materiali che potessero essere resistenti e comodi allo stesso tempo.                    
                     </p>
-                    <a href="img/tutorial_Barani_Cima_Olmi.pdf" class="nav-link"><strong>> Presentazione progetto</strong></a>
+                    <a href="img/tutorial_Barani_Cima_Olmi.pdf" class="nav-link" target="_blank" rel="noopener noreferrer"><strong>&gt; Presentazione progetto</strong></a>
                 </div>
                 <div class="col-12 col-lg-6 mb-0 mt-4 offset-lg-1">
-                    <img class="img-chi-sono" src="img/immagine_row_10.png" alt="Schizzi iniziali di progetto">
+                    <img class="img-chi-sono" src="img/immagine_row_10.png" alt="Schizzi iniziali del progetto paraschiena">
                 </div>
             </div>
         </div>
-    </div> 
+    </section> 
 
     <!-- CONTAINER 11: GALLERIA RENDER -->
-    <div class="sfondo-9">
+    <section class="sfondo-9">
         <div class="container content-wrapper">
             <div class="row mb-5 pt-4 pb-4 tight-gallery justify-content-center">
                 <div class="col-12 col-md-4 col-lg-5">
                     <figure class="project-figure">
-                        <img class="project-img" src="img/immagine1_row_11.png" alt="immagine progetto 1">
+                        <img class="project-img" src="img/immagine1_row_11.png" alt="Render obliquo del paraschiena">
                         <figcaption class="project-caption">
                             <p class="caption-title">Render finale del progetto obliquo</p>
                             <p class="caption-sub">2024 - 2025</p>
@@ -249,7 +255,7 @@
                 </div>
                 <div class="col-12 col-md-4 col-lg-5">
                     <figure class="project-figure">
-                        <img class="project-img" src="img/immagine2_row_11.png" alt="immagine progetto 2">
+                        <img class="project-img" src="img/immagine2_row_11.png" alt="Render frontale del paraschiena">
                         <figcaption class="project-caption">
                             <p class="caption-title">Render finale del progetto frontale</p>
                             <p class="caption-sub">2024 - 2025</p>
@@ -258,18 +264,18 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- CONTAINER 12: CONTATTI -->
-    <div class="sfondo-contatti" id="contatti">
+    <section class="sfondo-contatti" id="contatti">
         <div class="container content-wrapper">
             <div class="row mb-5 pt-5 pb-5">
                 <div class="col-12 col-lg-8 offset-lg-2">
-                    <h1 class="titolo text-center mb-5">CONTATTI</h1>
+                    <h2 class="titolo text-center mb-5">CONTATTI</h2>
                     
                     <div class="contatto-item">
                         <div class="contatto-icon">
-                            <img src="img/icona_telefono.png" alt="telefono">
+                            <img src="img/icona_telefono.png" alt="">
                         </div>
                         <div class="contatto-info">
                             <p class="contatto-label">Telefono</p>
@@ -279,7 +285,7 @@
 
                     <div class="contatto-item">
                         <div class="contatto-icon">
-                            <img src="img/icona_mail.png" alt="email">
+                            <img src="img/icona_mail.png" alt="">
                         </div>
                         <div class="contatto-info">
                             <p class="contatto-label">Email</p>
@@ -289,7 +295,7 @@
 
                     <div class="contatto-item">
                         <div class="contatto-icon">
-                            <img src="img/icona_posizione.png" alt="luogo">
+                            <img src="img/icona_posizione.png" alt="">
                         </div>
                         <div class="contatto-info">
                             <p class="contatto-label">Luogo</p>
@@ -300,21 +306,24 @@
             </div>
         </div>
 
-    <!-- Container 14: FORM -->
+        <!-- Container 14: FORM -->
         <div id="form-contatti">
             <div class="container content-wrapper">
                 <div class="row mb-5 pt-5 pb-5">
                     <div class="col-12 col-lg-6 offset-lg-3">
                         <h2 class="titolo text-center mb-4">SCRIVIMI</h2>
-                        <form class="contact-form">
+                        <form class="contact-form" method="post" action="#">
                             <div class="form-group">
-                                <input type="text" placeholder="Nome" required>
+                                <label for="nome" class="visually-hidden">Nome</label>
+                                <input type="text" id="nome" name="nome" placeholder="Nome" required>
                             </div>
                             <div class="form-group">
-                                <input type="email" placeholder="Email" required>
+                                <label for="email" class="visually-hidden">Email</label>
+                                <input type="email" id="email" name="email" placeholder="Email" required>
                             </div>
                             <div class="form-group">
-                                <textarea placeholder="Messaggio" rows="6" required></textarea>
+                                <label for="messaggio" class="visually-hidden">Messaggio</label>
+                                <textarea id="messaggio" name="messaggio" placeholder="Messaggio" rows="6" required></textarea>
                             </div>
                             <div class="text-center">
                                 <button type="submit" class="btn-submit">INVIA</button>
@@ -324,169 +333,167 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- CONTAINER 13: FOOTER -->
-    <div class="container-fluid footer">
+    <footer class="container-fluid footer">
         <div class="container content-wrapper mb-5">
             <div class="row pt-5 pb-5 align-items-start">
                 <div class="col-12 col-md-3 mb-4 mb-md-0 d-flex justify-content-between align-items-center">
                     <p class="footer-text mb-0">© 2025 <br>Privacy - Cookies</p>
-                    <a href="#" class="footer-arrow d-md-none"><img src="img/freccia.png" alt="freccia"></a>
+                    <a href="#" class="footer-arrow d-md-none" aria-label="Torna su">
+                        <img src="img/freccia.png" alt="">
+                    </a>
                 </div>
-                <div class="col-12 col-md-9 text-md-end">
+                <nav class="col-12 col-md-9 text-md-end" aria-label="Navigazione footer">
                     <div class="footer-nav-wrapper d-none d-md-flex">
                         <a href="#" class="footer-link"><strong>Home</strong></a>
                         <a href="#chi-sono" class="footer-link"><strong>Chi sono</strong></a>
                         <a href="#progetti" class="footer-link"><strong>Progetti</strong></a>
                         <a href="#contatti" class="footer-link"><strong>Contatti</strong></a>
                     </div>
-                </div>
+                </nav>
             </div>
         </div>
-    </div>
+    </footer>
 
     <script>
-  // Seleziona gli elementi
-  const btnMenu = document.querySelector('.btn-menu');
-  const btnClose = document.querySelector('.btn-close');
-  const mobileNav = document.querySelector('.mobile-nav-wrapper');
-  const btnSearch = document.getElementById('btn-search');
-  const searchBar = document.getElementById('search-bar');
-  const searchInput = document.getElementById('search-input');
-  const searchResults = document.getElementById('search-results');
-  const closeSearch = document.getElementById('close-search');
+        // Seleziona gli elementi
+        const btnMenu = document.querySelector('.btn-menu');
+        const btnClose = document.querySelector('.btn-close');
+        const mobileNav = document.querySelector('.mobile-nav-wrapper');
+        const btnSearch = document.getElementById('btn-search');
+        const searchBar = document.getElementById('search-bar');
+        const searchInput = document.getElementById('search-input');
+        const searchResults = document.getElementById('search-results');
+        const closeSearch = document.getElementById('close-search');
 
-  // Apri il menu mobile
-  btnMenu.addEventListener('click', function() {
-    mobileNav.classList.add('show');
-    document.body.style.overflow = 'hidden';
-  });
+        // Apri il menu mobile
+        btnMenu.addEventListener('click', function() {
+            mobileNav.classList.add('show');
+            document.body.style.overflow = 'hidden';
+            btnMenu.setAttribute('aria-expanded', 'true');
+        });
 
-  // Chiudi il menu mobile
-  btnClose.addEventListener('click', function() {
-    mobileNav.classList.remove('show');
-    document.body.style.overflow = '';
-  });
+        // Chiudi il menu mobile
+        btnClose.addEventListener('click', function() {
+            mobileNav.classList.remove('show');
+            document.body.style.overflow = '';
+            btnMenu.setAttribute('aria-expanded', 'false');
+        });
 
-  // Chiudi il menu mobile quando clicchi su un link di navigazione
-  const mobileNavLinks = mobileNav.querySelectorAll('.nav-link');
-  mobileNavLinks.forEach(link => {
-    link.addEventListener('click', function() {
-      mobileNav.classList.remove('show');
-      document.body.style.overflow = '';
-    });
-  });
+        // Chiudi il menu mobile quando clicchi su un link
+        const mobileNavLinks = mobileNav.querySelectorAll('.nav-link');
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileNav.classList.remove('show');
+                document.body.style.overflow = '';
+                btnMenu.setAttribute('aria-expanded', 'false');
+            });
+        });
 
-  // Apri la barra di ricerca
-  btnSearch.addEventListener('click', function() {
-    searchBar.classList.remove('hidden');
-    searchInput.focus();
-  });
+        // Apri la barra di ricerca
+        btnSearch.addEventListener('click', function() {
+            searchBar.classList.remove('hidden');
+            searchInput.focus();
+        });
 
-  // Chiudi la barra di ricerca
-  closeSearch.addEventListener('click', function() {
-    searchBar.classList.add('hidden');
-    searchInput.value = '';
-    searchResults.innerHTML = '';
-  });
+        // Chiudi la barra di ricerca
+        closeSearch.addEventListener('click', function() {
+            searchBar.classList.add('hidden');
+            searchInput.value = '';
+            searchResults.innerHTML = '';
+        });
 
-  // Funzione di ricerca
-  searchInput.addEventListener('input', function() {
-    const query = this.value.toLowerCase().trim();
-    if (query.length === 0) {
-      searchResults.innerHTML = '';
-      return;
-    }
-
-    // Testi ricercabili dal sito
-    const searchableContent = [
-      { title: 'Home', text: 'Portfolio personale Rita Barani', anchor: '#' },
-      { title: 'Chi sono', text: 'Lavoro nel campo della comunicazione visiva e del prodotto', anchor: '#chi-sono' },
-      { title: 'Progetti', text: 'Tutti i miei progetti marchio packaging modellazione 3D', anchor: '#progetti' },
-      { title: 'Robotizr', text: 'Progetto marchio startup robotizr', anchor: '#robotizr' },
-      { title: 'Zuegg', text: 'Packaging confetture per formaggi', anchor: '#zuegg' },
-      { title: 'Protezione', text: 'Paraschiena modellazione 3D sci', anchor: '#protezione' },
-      { title: 'Contatti', text: 'Contattami per collaborazioni', anchor: '#contatti' },
-      { title: 'Scrivimi', text: 'Modulo di contatto per inviare un messaggio', anchor: '#form-contatti' },
-    ];
-
-    const results = searchableContent.filter(item =>
-      item.title.toLowerCase().includes(query) ||
-      item.text.toLowerCase().includes(query)
-    );
-
-    if (results.length === 0) {
-      searchResults.innerHTML = '<p class="search-no-results">Nessun risultato trovato</p>';
-    } else {
-      searchResults.innerHTML = results.map(result =>
-        `<a href="${result.anchor}" class="search-result-item" onclick="closeSearchAfterClick()">
-          <strong>${result.title}</strong>
-          <p>${result.text.substring(0, 60)}...</p>
-        </a>`
-      ).join('');
-    }
-  });
-
-  // Funzione per chiudere la ricerca dopo aver cliccato su un risultato
-  window.closeSearchAfterClick = function() {
-    setTimeout(function() {
-      searchBar.classList.add('hidden');
-      searchInput.value = '';
-      searchResults.innerHTML = '';
-    }, 100);
-  };
-
-// Funzione per smooth scroll
-function initSmoothScroll() {
-    // Seleziona tutti i link che puntano a sezioni interne (#)
-    const links = document.querySelectorAll('a[href^="#"]');
-    
-    links.forEach(link => {
-        link.addEventListener('click', function(e) {
-            // Ottieni l'href del link
-            const targetId = this.getAttribute('href');
+        // Funzione di ricerca
+        searchInput.addEventListener('input', function() {
+            const query = this.value.toLowerCase().trim();
             
-            // Se è solo "#", vai all'inizio della pagina
-            if (targetId === '#') {
-                e.preventDefault();
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
+            if (query.length === 0) {
+                searchResults.innerHTML = '';
                 return;
             }
-            
-            // Altrimenti, cerca l'elemento target
-            const targetElement = document.querySelector(targetId);
-            
-            if (targetElement) {
-                e.preventDefault();
-                
-                // Calcola la posizione dell'elemento considerando l'header fisso
-                const headerHeight = document.querySelector('.bg-verde').offsetHeight;
-                const targetPosition = targetElement.offsetTop - headerHeight;
-                
-                // Scroll smooth verso l'elemento
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
+
+            // Contenuti ricercabili
+            const searchableContent = [
+                { title: 'Home', text: 'Portfolio personale Rita Barani', anchor: '#' },
+                { title: 'Chi sono', text: 'Lavoro nel campo della comunicazione visiva e del prodotto', anchor: '#chi-sono' },
+                { title: 'Progetti', text: 'Tutti i miei progetti marchio packaging modellazione 3D', anchor: '#progetti' },
+                { title: 'Robotizr', text: 'Progetto marchio startup robotizr', anchor: '#robotizr' },
+                { title: 'Zuegg', text: 'Packaging confetture per formaggi', anchor: '#zuegg' },
+                { title: 'Protezione', text: 'Paraschiena modellazione 3D sci', anchor: '#protezione' },
+                { title: 'Contatti', text: 'Contattami per collaborazioni', anchor: '#contatti' },
+                { title: 'Scrivimi', text: 'Modulo di contatto per inviare un messaggio', anchor: '#form-contatti' },
+            ];
+
+            const results = searchableContent.filter(item =>
+                item.title.toLowerCase().includes(query) ||
+                item.text.toLowerCase().includes(query)
+            );
+
+            if (results.length === 0) {
+                searchResults.innerHTML = '<p class="search-no-results">Nessun risultato trovato</p>';
+            } else {
+                searchResults.innerHTML = results.map(result =>
+                    `<a href="${result.anchor}" class="search-result-item">
+                        <strong>${result.title}</strong>
+                        <p>${result.text.substring(0, 60)}...</p>
+                    </a>`
+                ).join('');
+
+                // Aggiungi evento click ai risultati
+                document.querySelectorAll('.search-result-item').forEach(item => {
+                    item.addEventListener('click', function() {
+                        setTimeout(function() {
+                            searchBar.classList.add('hidden');
+                            searchInput.value = '';
+                            searchResults.innerHTML = '';
+                        }, 100);
+                    });
                 });
-                
-                // Chiudi il menu mobile se aperto
-                const mobileNav = document.querySelector('.mobile-nav-wrapper');
-                if (mobileNav && mobileNav.classList.contains('show')) {
-                    mobileNav.classList.remove('show');
-                    document.body.style.overflow = '';
-                }
             }
         });
-    });
-}
 
-// Inizializza quando la pagina è pronta
-document.addEventListener('DOMContentLoaded', initSmoothScroll);
-  
-</script>
+        // Smooth scroll
+        function initSmoothScroll() {
+            const links = document.querySelectorAll('a[href^="#"]');
+            
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const targetId = this.getAttribute('href');
+                    
+                    if (targetId === '#') {
+                        e.preventDefault();
+                        window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
+                        return;
+                    }
+                    
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        e.preventDefault();
+                        const headerHeight = document.querySelector('.bg-verde').offsetHeight;
+                        const targetPosition = targetElement.offsetTop - headerHeight;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                        
+                        if (mobileNav.classList.contains('show')) {
+                            mobileNav.classList.remove('show');
+                            document.body.style.overflow = '';
+                            btnMenu.setAttribute('aria-expanded', 'false');
+                        }
+                    }
+                });
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', initSmoothScroll);
+    </script>
 </body>
 </html>
