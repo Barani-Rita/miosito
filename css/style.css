@@ -644,13 +644,9 @@ a:hover {
 }
 
 /* Form Contatti */
-.sfondo-form {
-    background: #DDCAA2;
-}
-
-.sfondo-form .content-wrapper {
+#form-contatti .content-wrapper {
     padding-top: 50px;
-    padding-bottom: 50px;
+    padding-bottom: 100px;
 }
 
 .contact-form {
@@ -705,7 +701,7 @@ a:hover {
 .form-group input::placeholder,
 .form-group textarea::placeholder {
     color: #403F0B;
-    opacity: 0.7; /* facoltativo */
+    opacity: 0.7;
 }
 
 /* =================================================================
@@ -752,6 +748,42 @@ a:hover {
 
 .footer-arrow:hover {
     transform: translateY(-5px);
+}
+
+/* =================================================================
+   ANIMAZIONE PULSE PER LINK PRESENTAZIONE PROGETTO
+   ================================================================= */
+
+/* Animazione Pulse per link Presentazione Progetto */
+.sfondo-4 .nav-link,
+.sfondo-8 .nav-link {
+    transition: all 0.3s ease;
+    display: inline-block;
+    animation: pulse-link 2s ease-in-out infinite;
+}
+
+.sfondo-4 .nav-link:hover,
+.sfondo-8 .nav-link:hover {
+    color: #95A04B;
+    animation: pulse-link-hover 1s ease-in-out infinite;
+}
+
+@keyframes pulse-link {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.03);
+    }
+}
+
+@keyframes pulse-link-hover {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.08);
+    }
 }
 
 /* =================================================================
@@ -894,4 +926,318 @@ a:hover {
     align-items: center;
     justify-content: flex-end;
     padding-right: 60px;
+}
+
+/* =================================================================
+   CSS PER SMOOTH SCROLL
+   ================================================================= */
+
+/* Smooth scroll nativo per browser compatibili */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Offset per le sezioni quando si clicca sui link (compensa l'header fisso) */
+section[id],
+div[id] {
+    scroll-margin-top: 110px;
+}
+
+/* Animazione per i link quando vengono cliccati */
+.nav-link,
+.footer-link {
+    transition: all 0.3s ease;
+}
+
+.nav-link:active,
+.footer-link:active {
+    transform: scale(0.95);
+}
+
+/* Effetto hover più evidente per i link di navigazione */
+.nav-link:hover,
+.footer-link:hover {
+    color: #403F0B;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+/* Per dispositivi mobili: scroll più veloce */
+@media (max-width: 767px) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* =================================================================
+   FIX MARGINI MOBILE - CONTAINER 3 (CHI SONO)
+   ================================================================= */
+
+/* Versione Mobile */
+@media (max-width: 767px) {
+    /* Container 3 - Chi sono: riduci margine inferiore */
+    .sfondo-1 .content-wrapper {
+        padding-top: 50px;
+        padding-bottom: 0 !important;
+    }
+    
+    .sfondo-1 .row.mb-5 {
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+    }
+    
+    .sfondo-1 .col-12.col-lg-6 {
+        margin-bottom: 0 !important;
+    }
+    
+    .sfondo-1 .col-sm-12.col-md-6.col-lg-4 {
+        margin-top: 15px;
+        padding-bottom: 0 !important;
+        margin-bottom: 0 !important;
+    }
+    
+    .sfondo-1 {
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+    }
+    
+    .sfondo-1 .img-chi-sono {
+        display: block;
+        margin-bottom: 0 !important;
+    }
+    
+    /* Rimuovi padding top del container successivo */
+    .sfondo-2 {
+        padding-top: 0 !important;
+    }
+    
+    .sfondo-2 .content-wrapper {
+        padding-top: 0 !important;
+    }
+    
+    .sfondo-2 .row {
+        padding-top: 20px;
+        margin-top: 0 !important;
+    }
+    
+    /* Container 3, 6, 8, 10, 11 - Riduci margini inferiori */
+    .sfondo-4 .content-wrapper,
+    .sfondo-6 .content-wrapper,
+    .sfondo-8 .content-wrapper,
+    .sfondo-contatti .content-wrapper {
+        padding-bottom: 0 !important;
+    }
+    
+    .sfondo-4 .row.mb-5,
+    .sfondo-6 .row.mb-5,
+    .sfondo-8 .row.mb-5,
+    .sfondo-contatti .row.mb-5 {
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+    }
+    
+    .sfondo-4 .col-12.col-lg-6,
+    .sfondo-6 .col-12.col-lg-6,
+    .sfondo-8 .col-12.col-lg-6,
+    .sfondo-contatti .col-12.col-lg-6 {
+        margin-bottom: 0 !important;
+    }
+    
+    .sfondo-4 .col-sm-12.col-md-6.col-lg-4,
+    .sfondo-6 .col-sm-12.col-md-6.col-lg-4,
+    .sfondo-8 .col-sm-12.col-md-6.col-lg-4 {
+        margin-top: 15px;
+        padding-bottom: 0 !important;
+        margin-bottom: 0 !important;
+    }
+    
+    .sfondo-4,
+    .sfondo-6,
+    .sfondo-8,
+    .sfondo-contatti {
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+    }
+    
+    .sfondo-4 .img-chi-sono,
+    .sfondo-6 .img-chi-sono,
+    .sfondo-8 .img-chi-sono {
+        display: block;
+        margin-bottom: 0 !important;
+    }
+    
+    /* Per le gallerie (container 9 e 12) */
+    .sfondo-9 .tight-gallery > [class*='col-'] {
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+    }
+    
+    .sfondo-contatti .col-sm-12.col-md-6.col-lg-4 {
+        margin-bottom: 0 !important;
+    }
+    .sfondo-contatti .contatto-item {
+        margin-bottom: 20px;
+    }
+}
+
+/* Versione mobile – spaziatura più ampia */
+@media (max-width: 768px) {
+    .container14 {
+        margin-bottom: 80px;   /* margine aumentato su mobile */
+    }
+}
+/* ========================
+   Container 14 — FORTE override per mobile
+   ======================== */
+
+
+
+/* MOBILE: aumentare lo spazio inferiore per il container 14.
+   Inserisci questo blocco *dopo* tutte le altre regole CSS. */
+@media (max-width: 767px) {
+    /* Aumenta lo spazio inferiore visibile: puoi cambiare 140px con il valore che preferisci */
+    #form-contatti,
+    #form-contatti .content-wrapper {
+        padding-bottom: 40px !important;
+        margin-bottom: 0 !important; /* manteniamo padding per lo spazio visivo */
+    }
+}
+/* =================================================================
+   ANIMAZIONE UNDERLINE DA SINISTRA A DESTRA PER TUTTI I LINK
+   ================================================================= */
+
+/* Link di navigazione nell'header */
+.nav-link {
+    position: relative;
+    text-decoration: none !important;
+    border-bottom: none !important;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: #403F0B;
+    transition: width 0.4s ease-in-out;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link:hover {
+    text-decoration: none !important;
+}
+
+/* Link nel footer */
+.footer-link {
+    position: relative;
+    text-decoration: none !important;
+}
+
+.footer-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: #403F0B;
+    transition: width 0.4s ease-in-out;
+}
+
+.footer-link:hover::after {
+    width: 100%;
+}
+
+.footer-link:hover {
+    text-decoration: none !important;
+}
+
+/* Link "Presentazione progetto" (Robotizr e Protezione) */
+.sfondo-4 .nav-link,
+.sfondo-8 .nav-link {
+    position: relative;
+    text-decoration: none !important;
+    display: inline-block;
+}
+
+.sfondo-4 .nav-link::after,
+.sfondo-8 .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: #403F0B;
+    transition: width 0.4s ease-in-out;
+}
+
+.sfondo-4 .nav-link:hover::after,
+.sfondo-8 .nav-link:hover::after {
+    width: 100%;
+}
+
+.sfondo-4 .nav-link:hover,
+.sfondo-8 .nav-link:hover {
+    text-decoration: none !important;
+    color: #95A04B;
+}
+
+/* Link generici nel sito */
+a:not(.nav-link):not(.footer-link):not(.search-result-item):not(.footer-arrow) {
+    position: relative;
+    text-decoration: none !important;
+}
+
+a:not(.nav-link):not(.footer-link):not(.search-result-item):not(.footer-arrow)::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: currentColor;
+    transition: width 0.4s ease-in-out;
+}
+
+a:not(.nav-link):not(.footer-link):not(.search-result-item):not(.footer-arrow):hover::after {
+    width: 100%;
+}
+
+a:not(.nav-link):not(.footer-link):not(.search-result-item):not(.footer-arrow):hover {
+    text-decoration: none !important;
+}
+
+/* Rimuovi animazione pulse precedente per i link Presentazione Progetto */
+@keyframes pulse-link {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.03);
+    }
+}
+
+@keyframes pulse-link-hover {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.08);
+    }
+}
+
+.sfondo-4 .nav-link,
+.sfondo-8 .nav-link {
+    animation: none;
+}
+
+.sfondo-4 .nav-link:hover,
+.sfondo-8 .nav-link:hover {
+    animation: none;
 }

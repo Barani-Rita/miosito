@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>portfolio personale</title>
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/bootstrap-grid.css">
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>portfolio personale</title>
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/favicon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="img/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap-grid.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="min-width">
 
@@ -298,7 +301,7 @@
         </div>
 
     <!-- Container 14: FORM -->
-        <divid="form-contatti">
+        <div id="form-contatti">
             <div class="container content-wrapper">
                 <div class="row mb-5 pt-5 pb-5">
                     <div class="col-12 col-lg-6 offset-lg-3">
@@ -433,6 +436,57 @@
       searchResults.innerHTML = '';
     }, 100);
   };
+
+// Funzione per smooth scroll
+function initSmoothScroll() {
+    // Seleziona tutti i link che puntano a sezioni interne (#)
+    const links = document.querySelectorAll('a[href^="#"]');
+    
+    links.forEach(link => {
+        link.addEventListener('click', function(e) {
+            // Ottieni l'href del link
+            const targetId = this.getAttribute('href');
+            
+            // Se è solo "#", vai all'inizio della pagina
+            if (targetId === '#') {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+                return;
+            }
+            
+            // Altrimenti, cerca l'elemento target
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                e.preventDefault();
+                
+                // Calcola la posizione dell'elemento considerando l'header fisso
+                const headerHeight = document.querySelector('.bg-verde').offsetHeight;
+                const targetPosition = targetElement.offsetTop - headerHeight;
+                
+                // Scroll smooth verso l'elemento
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+                
+                // Chiudi il menu mobile se aperto
+                const mobileNav = document.querySelector('.mobile-nav-wrapper');
+                if (mobileNav && mobileNav.classList.contains('show')) {
+                    mobileNav.classList.remove('show');
+                    document.body.style.overflow = '';
+                }
+            }
+        });
+    });
+}
+
+// Inizializza quando la pagina è pronta
+document.addEventListener('DOMContentLoaded', initSmoothScroll);
+  
 </script>
 </body>
 </html>
