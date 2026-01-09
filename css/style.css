@@ -122,7 +122,7 @@ div[id] {
 
 /* Buttons */
 .btn-cerca {
-    background: transparent url('../img/search.png') no-repeat center center;
+    background: transparent url('../img/search.webp') no-repeat center center;
     background-size: contain;
     border: none;
     padding: 0;
@@ -140,7 +140,7 @@ div[id] {
 }
 
 .btn-menu {
-    background: transparent url('../img/menù_hamburger.png') no-repeat center center;
+    background: transparent url('../img/menù_hamburger.webp') no-repeat center center;
     background-size: contain;
     border: none;
     padding: 0;
@@ -152,7 +152,7 @@ div[id] {
 }
 
 .btn-close {
-    background: transparent url('../img/close.png') no-repeat center center;
+    background: transparent url('../img/close.webp') no-repeat center center;
     background-size: cover;
     border: none;
     padding: 0;
@@ -321,7 +321,7 @@ div[id] {
 }
 
 .close-search {
-    background: transparent url('../img/close.png') no-repeat center center;
+    background: transparent url('../img/close.webp') no-repeat center center;
     background-size: contain;
     border: none;
     width: 24px;
